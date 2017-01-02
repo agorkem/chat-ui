@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+  "settings": {
+    "import/resolver": "webpack",
+  },
+  "extends": "airbnb",
+  "rules": {
+    "react/jsx-no-bind": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*_spec.js", "**/*.dev.js", "test/**"],
+      }
+    ]
+  }
+}

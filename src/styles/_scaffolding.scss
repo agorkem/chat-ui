@@ -1,0 +1,24 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  background-color: $codgray;
+}
+
+textarea,
+button,
+input {
+  &:focus {
+    outline-color: transparent;
+    outline-style: none;
+  }
+}

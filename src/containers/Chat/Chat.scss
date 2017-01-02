@@ -1,0 +1,20 @@
+@import '~styles/colors';
+
+:local
+.chat {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  &-users {
+    min-width: 200px;
+    overflow-y: scroll;
+  }
+
+  &-room {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex: 1;
+  }
+}

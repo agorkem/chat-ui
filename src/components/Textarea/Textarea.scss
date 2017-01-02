@@ -1,0 +1,13 @@
+@import '~styles/colors';
+
+:local
+.textarea {
+  flex: 1;
+  border: none;
+  resize: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: lighten($codgray, 50%);
+  background-color: lighten($codgray, 10%);
+  padding: 15px;
+}

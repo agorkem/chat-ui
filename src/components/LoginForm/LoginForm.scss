@@ -1,0 +1,47 @@
+@import '~styles/mixins';
+@import '~styles/colors';
+
+:local {
+  .login-form {
+    display: flex;
+
+    &-name {
+      border: 0;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      color: $schoolbus;
+      background-color: lighten($codgray, 10%);
+      padding: 15px;
+    }
+
+    &-button {
+      border: 0;
+      padding: 15px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      background-color: lighten($codgray, 10%);
+      color: $schoolbus;
+      font-size: 1.5em;
+      cursor: pointer;
+      @extend %icon;
+
+      &:hover:not(&-loading) {
+        background-color: $schoolbus;
+        color: lighten($codgray, 10%);
+      }
+
+      &:before {
+        content: '\E908';
+      }
+
+      &-loading:before {
+        content: '\E105';
+        display: block;
+
+        :global {
+          animation: rotate 2s infinite linear;
+        }
+      }
+    }
+  }
+}

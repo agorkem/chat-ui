@@ -1,0 +1,17 @@
+@import '~styles/colors';
+
+:local
+.button {
+  width: 100px;
+  border: none;
+  background-color: $schoolbus;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: $codgray;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  &:hover {
+    background-color: darken($schoolbus, 5%);
+  }
+}

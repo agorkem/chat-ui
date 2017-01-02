@@ -1,0 +1,66 @@
+@font-face {
+	font-family: 'icons';
+	src:url('./fonts/icons.eot?3tlf1h');
+	src:url('./fonts/icons.eot?3tlf1h#iefix') format('embedded-opentype'),
+		url('./fonts/icons.ttf?3tlf1h') format('truetype'),
+		url('./fonts/icons.woff?3tlf1h') format('woff'),
+		url('./fonts/icons.svg?3tlf1h#iconmoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	@extend %icon;
+}
+
+.icon-loader:before {
+	content: "\e105";
+}
+.icon-check:before {
+	content: "\e116";
+}
+.icon-star:before {
+	content: "\e900";
+}
+.icon-sound:before {
+	content: "\e901";
+}
+.icon-video:before {
+	content: "\e902";
+}
+.icon-trash:before {
+	content: "\e903";
+}
+.icon-user:before {
+	content: "\e904";
+}
+.icon-key:before {
+	content: "\e90d";
+}
+.icon-search:before {
+	content: "\e90e";
+}
+.icon-settings:before {
+	content: "\e905";
+}
+.icon-pen:before {
+	content: "\e906";
+}
+.icon-eye:before {
+	content: "\e907";
+}
+.icon-bubble:before {
+	content: "\e908";
+}
+.icon-mail:before {
+	content: "\e909";
+}
+.icon-like:before {
+	content: "\e90a";
+}
+.icon-paperplane:before {
+	content: "\e90b";
+}
+.icon-clip:before {
+	content: "\e90c";
+}
