@@ -1,12 +1,14 @@
 import { push } from 'react-router-redux';
 import * as types from 'constants/ActionTypes';
 import { pages } from 'constants/AppSettings';
+import { v4 } from 'node-uuid';
+import { createChannel } from 'helpers/connection';
 
 export function addMessage(message) {
   return {
     type: types.ADD_MESSAGE,
     message: {
-      id: +(new Date()),
+      id: v4(),
       text: message,
     },
   };
@@ -24,30 +26,29 @@ export function removeUser(userId) {
   return { type: types.REMOVE_USER, userId };
 }
 
-export function saveUser(user) {
+export function authorize(user) {
+  return { type: types.AUTHORIZE, user };
+}
+
+export function joinChannel(name) {
+  return { type: types.JOIN_CHANNEL, name };
+}
+
+export function requestToJoinChannel(name) {
   return (dispatch) => {
-    localStorage.user = user;
-    return dispatch(addUser(user));
+    createChannel(name).then(() => {
+      dispatch(joinChannel(name));
+      dispatch(push('/'));
+    });
   };
 }
 
-export function loadUser() {
+export function login(name) {
   return (dispatch) => {
-    const loadedUser = {
-      name: 'Gorkem',
-      id: 0,
-    };
+    const id = v4();
 
-    if (loadedUser) {
-      return dispatch(addUser(loadedUser));
-    }
-
-    return dispatch(push(pages.login));
-  };
-}
-
-export function login() {
-  return () => {
-
+    dispatch(addUser({ name, id }));
+    dispatch(authorize({ name, id }));
+    dispatch(push(pages.joinChannel));
   };
 }

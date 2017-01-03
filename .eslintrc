@@ -3,10 +3,10 @@
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true,
+    "mocha": true
   },
   "settings": {
-    "import/resolver": "webpack",
+    "import/resolver": "webpack"
   },
   "extends": "airbnb",
   "rules": {
@@ -15,7 +15,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["**/*_spec.js", "**/*.dev.js", "test/**"],
+        "devDependencies": ["**/*_spec.js", "**/*.dev.js", "test/**"]
       }
     ]
   }

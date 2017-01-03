@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { browserHistory, Router } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import './styles/main.scss';
+import 'helpers/connection';
+import 'styles/main.scss';
 import configureStore from './store/configureStore';
 import routes from './routes';
 

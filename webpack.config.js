@@ -1,4 +1,5 @@
-const webpack = require('webpack');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -23,17 +24,18 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
-      root: `${__dirname}/src/`,
-      components: `${__dirname}/src/components`,
-      containers: `${__dirname}/src/containers`,
-      actions: `${__dirname}/src/actions`,
-      constants: `${__dirname}/src/constants`,
-      reducers: `${__dirname}/src/reducers`,
-      styles: `${__dirname}/src/styles`,
+      root: __dirname + '/src/',
+      components: __dirname + '/src/components',
+      helpers: __dirname + '/src/helpers',
+      containers: __dirname + '/src/containers',
+      actions: __dirname + '/src/actions',
+      constants: __dirname + '/src/constants',
+      reducers: __dirname + '/src/reducers',
+      styles: __dirname + '/src/styles',
     },
   },
   output: {
-    path: `${__dirname}/dist`,
+    path: __dirname + '/dist',
     publicPath: '/',
     filename: 'bundle.js',
   },
@@ -42,4 +44,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: './dist',
   },
+  plugins: [new HtmlWebpackPlugin({
+    template: './src/index.html',
+  })],
 };
